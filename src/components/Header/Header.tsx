@@ -1,4 +1,10 @@
-export const Header = () => {
+interface Props {
+  setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
+}
+export const Header = ({ setSearchQuery }: Props) => {
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value); // Update the search query in App
+  };
   return (
     <nav className="navbar navbar-dark bg-dark">
       <div className="container-fluid">
@@ -18,6 +24,7 @@ export const Header = () => {
             type="search"
             placeholder="Search"
             aria-label="Search"
+            onChange={handleSearch}
           />
         </form>
       </div>

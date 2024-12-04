@@ -1,9 +1,15 @@
-import pokemonData from "../../../public/pokemonCards.json";
-
-const Card = () => {
+interface Card {
+  id: string;
+  name: string;
+  images: { small: string };
+}
+interface Props {
+  cards: Card[];
+}
+const Card = ({ cards }: Props) => {
   return (
     <div className="row">
-      {pokemonData.data.map((pokemon) => (
+      {cards.map((pokemon) => (
         <div
           key={pokemon.id}
           className="card text-bg-dark m-1"
@@ -23,7 +29,6 @@ const Card = () => {
             <a href="#" className="card-link">
               Card link
             </a>
-            {/* <a href="#" className="card-link">Another link</a> */}
           </div>
         </div>
       ))}
