@@ -9,10 +9,10 @@ function App() {
     pokemon.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
   return (
-    <>
+    <div style={{ backgroundImage: `url('public/pokemon-bg.jpg')` }}>
       <Header setSearchQuery={setSearchQuery} />
       <Card cards={filteredPokemon} />
-    </>
+    </div>
   );
 }
 

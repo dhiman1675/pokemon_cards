@@ -10,13 +10,12 @@ export const Header = ({ setSearchQuery }: Props) => {
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           <img
-            src="../../../public/pokemon_logo.svg"
+            src="public/pokemon_logo.svg"
             alt="Logo"
-            width="30"
-            height="24"
+            width="150"
+            height="30"
             className="d-inline-block align-text-top"
           />
-          POKEMON
         </a>
         <form className="d-flex" role="search">
           <input

@@ -2,6 +2,8 @@ interface Card {
   id: string;
   name: string;
   images: { small: string };
+  // flavorText: string;
+  // types: string[];
 }
 interface Props {
   cards: Card[];
@@ -12,8 +14,8 @@ const Card = ({ cards }: Props) => {
       {cards.map((pokemon) => (
         <div
           key={pokemon.id}
-          className="card text-bg-dark m-1"
-          style={{ width: "19.2%" }}
+          className="card text-bg-dark m-3"
+          style={{ width: "14.3%" }}
         >
           <div className="card-header">{pokemon.name}</div>
           <img
@@ -22,13 +24,8 @@ const Card = ({ cards }: Props) => {
             className="card-img-top"
           />
           <div className="card-body">
-            <h5 className="card-title">{pokemon.types.join(", ")} Type</h5>
-            <p className="card-text">{pokemon.flavorText}</p>
-          </div>
-          <div className="card-body">
-            <a href="#" className="card-link">
-              Card link
-            </a>
+            <h5 className="card-text">{pokemon.types.join(", ")} Type</h5>
+            {/* <p className="card-text">{pokemon.flavorText}</p> */}
           </div>
         </div>
       ))}
