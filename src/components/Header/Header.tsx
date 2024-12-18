@@ -1,16 +1,18 @@
+import { useRef } from "react";
+
 interface Props {
-  setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
+  setSearchQuery: (item: string) => void;
 }
+
 export const Header = ({ setSearchQuery }: Props) => {
-  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(event.target.value); // Update the search query in App
-  };
+  const searchString = useRef<HTMLInputElement>(null);
+
   return (
     <nav className="navbar navbar-dark bg-dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           <img
-            src="public/pokemon_logo.svg"
+            src="/pokemon_logo.svg"
             alt="Logo"
             width="150"
             height="30"
@@ -19,11 +21,16 @@ export const Header = ({ setSearchQuery }: Props) => {
         </a>
         <form className="d-flex" role="search">
           <input
+            ref={searchString}
             className="form-control me-2"
             type="search"
             placeholder="Search"
             aria-label="Search"
-            onChange={handleSearch}
+            onChange={() => {
+              setSearchQuery(
+                searchString.current !== null ? searchString.current.value : ""
+              );
+            }}
           />
         </form>
       </div>
