@@ -5,13 +5,9 @@ interface Props {
 }
 const Card = ({ cards }: Props) => {
   return (
-    <div className="row">
+    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 row-cols-xl-7 d-flex justify-content-center">
       {cards.map((pokemon) => (
-        <div
-          key={pokemon.id}
-          className="card text-bg-dark m-3"
-          style={{ width: "14.3%" }}
-        >
+        <div key={pokemon.id} className="card text-bg-dark m-3">
           <div className="card-header">{pokemon.name}</div>
           <img
             src={pokemon.images.small}
