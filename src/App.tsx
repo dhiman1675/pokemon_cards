@@ -4,10 +4,13 @@ import { Header } from "./components/Header/Header";
 import Card from "./components/Card/Card";
 // custom hook
 import { getPokemonCards } from "./react-query/hooks/GetPokemonCards";
+import Pagination from "./components/Pagination/Pagination";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
-  const { data, isLoading, error } = getPokemonCards(1);
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 75;
+  const { data, isLoading, error } = getPokemonCards(currentPage);
 
   if (isLoading) {
     return (
@@ -27,6 +30,11 @@ function App() {
   return (
     <div style={{ backgroundImage: `url('/pokemon-bg.jpg')` }}>
       <Header setSearchQuery={setSearchQuery} />
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={setCurrentPage}
+      />
       <Card cards={filteredPokemon} />
     </div>
   );
