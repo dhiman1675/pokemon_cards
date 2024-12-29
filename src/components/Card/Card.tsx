@@ -1,12 +1,7 @@
-interface Card {
-  id: string;
-  name: string;
-  images: { small: string };
-  // flavorText: string;
-  // types: string[];
-}
+import { PokemonCard } from "../../react-query/Api";
+
 interface Props {
-  cards: Card[];
+  cards: PokemonCard[];
 }
 const Card = ({ cards }: Props) => {
   return (

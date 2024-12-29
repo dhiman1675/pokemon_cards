@@ -5,10 +5,14 @@ export interface PokemonCard {
   name: string;
   images: { small: string };
   // flavorText: string;
-  // types: string[];
+  types: string[];
 }
 
-export const fetchPokemonCards = async (): Promise<PokemonCard[]> => {
-  const response = await axios.get("https://api.pokemontcg.io/v2/cards?page=1");
+export const fetchPokemonCards = async (
+  page: number
+): Promise<PokemonCard[]> => {
+  const response = await axios.get(
+    `https://api.pokemontcg.io/v2/cards?page=${page}`
+  );
   return response.data.data;
 };
