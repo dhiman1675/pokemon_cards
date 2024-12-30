@@ -3,7 +3,7 @@ import axios from "axios";
 export interface PokemonCard {
   id: string;
   name: string;
-  images: { small: string };
+  images: { large: string };
   // flavorText: string;
   types: string[];
 }

@@ -11,7 +11,7 @@ const Card = ({ cards }: Props) => {
         <div key={pokemon.id} className="card animated-rainbow-div m-3 p-1">
           {/* <div className="card-header">{pokemon.name}</div> */}
           <img
-            src={pokemon.images.small}
+            src={pokemon.images.large}
             alt={pokemon.name}
             className="card-img-top"
           />
