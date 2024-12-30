@@ -4,7 +4,7 @@ export interface PokemonCard {
   id: string;
   name: string;
   images: { large: string };
-  // flavorText: string;
+  flavorText: string;
   types: string[];
 }
 

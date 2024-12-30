@@ -13,9 +13,9 @@
   animation: rainbow 5s infinite; /* Adjust duration as needed */
   color: white;
   text-align: center;
-  line-height: 150px;
-  font-size: 20px;
-  border-radius: 8px; /* Optional for rounded corners */
+  font-weight: bolder;
+  font-family: monospace;
+  border-radius: 0.5rem;
 }
 
 @keyframes rainbow {
