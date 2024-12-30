@@ -2,9 +2,9 @@ import { useState } from "react";
 // components
 import { Header } from "./components/Header/Header";
 import Card from "./components/Card/Card";
+import Pagination from "./components/Pagination/Pagination";
 // custom hook
 import { getPokemonCards } from "./react-query/hooks/GetPokemonCards";
-import Pagination from "./components/Pagination/Pagination";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");

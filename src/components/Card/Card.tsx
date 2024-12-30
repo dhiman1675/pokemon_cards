@@ -17,7 +17,10 @@ const Card = ({ cards }: Props) => {
   };
 
   return (
-    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 row-cols-xl-7 d-flex justify-content-center">
+    <div
+      className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 row-cols-xl-7 d-flex
+                    justify-content-center mx-1"
+    >
       {cards.map((pokemon) => (
         <div
           key={pokemon.id}
