@@ -1,0 +1,31 @@
+.animated-rainbow-div {
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  background-size: 400% 400%; /* Makes the gradient larger for a smooth animation */
+  animation: rainbow 5s infinite; /* Adjust duration as needed */
+  color: white;
+  text-align: center;
+  line-height: 150px;
+  font-size: 20px;
+  border-radius: 8px; /* Optional for rounded corners */
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
